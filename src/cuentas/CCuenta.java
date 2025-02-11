@@ -2,24 +2,26 @@ package cuentas;
 
 /**
  * Clase que representa una cuenta bancaria.
+ * Permite realizar operaciones como ingresar y retirar dinero.
  */
 public class CCuenta {
-    private String nombre;
-    private String cuenta;
-    private double saldo;
-    private double tipoInteres;
+    private String nombre;  // Nombre del titular de la cuenta
+    private String cuenta;  // Número de cuenta bancaria
+    private double saldo;   // Saldo disponible en la cuenta
+    private double tipoInteres;  // Tipo de interés asociado a la cuenta
 
     /**
-     * Constructor vacío
+     * Constructor vacío.
      */
     public CCuenta() {}
 
     /**
-     * Constructor con parámetros
-     * @param nom Nombre del titular
-     * @param cue Número de cuenta
-     * @param sal Saldo inicial
-     * @param tipo Tipo de interés
+     * Constructor con parámetros para inicializar la cuenta bancaria.
+     *
+     * @param nom Nombre del titular.
+     * @param cue Número de cuenta.
+     * @param sal Saldo inicial.
+     * @param tipo Tipo de interés.
      */
     public CCuenta(String nom, String cue, double sal, double tipo) {
         this.nombre = nom;
@@ -29,17 +31,19 @@ public class CCuenta {
     }
 
     /**
-     * Devuelve el saldo actual de la cuenta
-     * @return saldo actual
+     * Devuelve el saldo actual de la cuenta.
+     *
+     * @return saldo actual en la cuenta.
      */
     public double getSaldo() {
         return saldo;
     }
 
     /**
-     * Método para ingresar dinero en la cuenta
-     * @param cantidad Monto a ingresar
-     * @throws Exception Si la cantidad es negativa
+     * Método para ingresar dinero en la cuenta.
+     *
+     * @param cantidad Monto a ingresar.
+     * @throws Exception Si la cantidad es negativa.
      */
     public void ingresar(double cantidad) throws Exception {
         if (cantidad < 0) {
@@ -49,9 +53,10 @@ public class CCuenta {
     }
 
     /**
-     * Método para retirar dinero de la cuenta
-     * @param cantidad Monto a retirar
-     * @throws Exception Si la cantidad es negativa o mayor que el saldo
+     * Método para retirar dinero de la cuenta.
+     *
+     * @param cantidad Monto a retirar.
+     * @throws Exception Si la cantidad es negativa o mayor que el saldo.
      */
     public void retirar(double cantidad) throws Exception {
         if (cantidad <= 0) {
@@ -64,9 +69,10 @@ public class CCuenta {
     }
 
     /**
-     * Método que encapsula operaciones sobre la cuenta
-     * @param cuenta Cuenta sobre la que operar
-     * @param cantidad Cantidad a operar
+     * Método que encapsula operaciones sobre la cuenta.
+     *
+     * @param cuenta Cuenta sobre la que operar.
+     * @param cantidad Cantidad a operar.
      */
     public static void operativa_cuenta(CCuenta cuenta, float cantidad) {
         try {
@@ -82,4 +88,3 @@ public class CCuenta {
         }
     }
 }
-
